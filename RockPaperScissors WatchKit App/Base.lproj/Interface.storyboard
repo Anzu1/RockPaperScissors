@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RockPaperScissors_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="aet-iu-17N">
+                            <items>
+                                <button width="42" height="37" alignment="left" backgroundImage="rock" id="WK8-GX-cYm">
+                                    <connections>
+                                        <action selector="chooseRock" destination="AgC-eL-Hgc" id="Lsb-qg-hCG"/>
+                                    </connections>
+                                </button>
+                                <button width="46" height="38" alignment="center" backgroundImage="paper" id="tbi-c5-Z0d">
+                                    <connections>
+                                        <action selector="choosePaper" destination="AgC-eL-Hgc" id="7oH-1R-ZKG"/>
+                                    </connections>
+                                </button>
+                                <button width="46" height="35" alignment="right" backgroundImage="scissors" id="6f2-lV-sNf">
+                                    <connections>
+                                        <action selector="chooseScissors" destination="AgC-eL-Hgc" id="SxR-Pv-7sD"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label width="136" alignment="left" text="vs." textAlignment="center" id="KmY-sI-BZA"/>
+                        <imageView width="50" height="33" alignment="center" id="ZMz-Bf-DIv"/>
+                        <label alignment="center" text="You win!" id="3cI-T6-pYV"/>
+                        <group width="1" alignment="left" id="BrB-Un-aEb">
+                            <items>
+                                <label alignment="left" text="Score: 0" id="ljQ-VT-cf1"/>
+                                <button width="50" height="18.5" alignment="right" title="Info" id="CAP-yZ-enW"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="oponentSymbol" destination="ZMz-Bf-DIv" id="F7g-OE-hyX"/>
+                        <outlet property="resultLabel" destination="3cI-T6-pYV" id="OR0-8M-3OU"/>
+                        <outlet property="scoreLabel" destination="ljQ-VT-cf1" id="jUI-gr-Lfs"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="334"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="BSu-dh-jEm">
+            <objects>
+                <controller id="Djc-dx-TRP">
+                    <items>
+                        <label alignment="left" text="Current score:" id="Z1a-kI-IGJ"/>
+                        <label alignment="right" text="0" id="6aS-Tv-rLY"/>
+                        <separator alignment="left" id="NSb-Sm-zEj"/>
+                        <label alignment="left" text="High score:" id="Xli-Rq-eqs"/>
+                        <label alignment="right" text="0" id="diA-z4-7gb"/>
+                        <separator alignment="left" id="msA-Lk-Tk5"/>
+                        <label alignment="left" text="Games played:" id="Vpw-ey-8MZ"/>
+                        <label alignment="right" text="0" id="DxM-2F-GRf"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="470" y="335"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="RockPaperScissors_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
