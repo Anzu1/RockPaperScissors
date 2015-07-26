@@ -27,7 +27,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func choosePaper() {
         play("paper")
-    }
+    }//
     
     @IBAction func chooseScissors() {
         play("scissors")
