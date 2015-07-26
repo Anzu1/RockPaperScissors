@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        var categories = NSMutableSet()
+        var gameCategory = UIMutableUserNotificationCategory()
+        gameCategory.identifier = "gameCategory"
+        categories.addObject(gameCategory)
+        var settings = UIUserNotificationSettings(forTypes: (.Alert | .Badge | .Sound), categories: categories as Set<NSObject>)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         return true
     }
 
