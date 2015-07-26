@@ -18,8 +18,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         var categories = NSMutableSet()
+        
+        var playRock = UIMutableUserNotificationAction()
+        playRock.title = "Play Rock"
+        playRock.identifier = "rock"
+        playRock.activationMode = UIUserNotificationActivationMode.Foreground
+        playRock.authenticationRequired = false
+        
+        
+        var playPaper = UIMutableUserNotificationAction()
+        playPaper.title = "Play Paper"
+        playPaper.identifier = "paper"
+        playPaper.activationMode = UIUserNotificationActivationMode.Foreground
+        playPaper.authenticationRequired = false
+        
+        var playScissors = UIMutableUserNotificationAction()
+        playScissors.title = "Play Scissors"
+        playScissors.identifier = "scissors"
+        playScissors.activationMode = UIUserNotificationActivationMode.Foreground
+        playScissors.authenticationRequired = false
+        
+        
+        
         var gameCategory = UIMutableUserNotificationCategory()
         gameCategory.identifier = "gameCategory"
+
+        let actions = [AnyObject](arrayLiteral:  playPaper, playRock, playScissors)
+        
+        gameCategory.setActions(actions, forContext: UIUserNotificationActionContext.Default)
+
         categories.addObject(gameCategory)
         
         var settings = UIUserNotificationSettings(forTypes: (.Alert | .Badge | .Sound), categories: categories as Set<NSObject>)

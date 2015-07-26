@@ -113,4 +113,10 @@ class InterfaceController: WKInterfaceController {
             play(identifier!)
         }
     }
+    
+    override func handleActionWithIdentifier(identifier: String?, forLocalNotification localNotification: UILocalNotification) {
+        if (identifier != nil) {
+            play(identifier!)
+        }
+    }
 }
