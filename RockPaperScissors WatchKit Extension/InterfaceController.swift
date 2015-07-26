@@ -23,6 +23,13 @@ class InterfaceController: WKInterfaceController {
     var highscore = 0
     let symbols = ["rock", "paper", "scissors"]
 
+    @IBAction func resetGame() {
+        oponentSymbol.setImage(nil)
+        score = 0
+        resultLabel.setText("Tap Icon to start")
+        scoreLabel.setText("")
+    }
+    
     @IBAction func chooseRock() {
         play("rock")
     }
@@ -98,6 +105,12 @@ class InterfaceController: WKInterfaceController {
         if score>highscore {
             defaults.setObject(score, forKey: "highscore")
             defaults.synchronize()
+        }
+    }
+    
+    override func handleActionWithIdentifier(identifier: String?, forRemoteNotification remoteNotification: [NSObject : AnyObject]) {
+        if (identifier != nil) {
+            play(identifier!)
         }
     }
 }

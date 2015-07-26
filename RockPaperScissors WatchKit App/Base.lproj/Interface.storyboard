@@ -31,7 +31,7 @@
                         </group>
                         <label width="136" alignment="left" text="vs." textAlignment="center" id="KmY-sI-BZA"/>
                         <imageView width="50" height="33" alignment="center" id="ZMz-Bf-DIv"/>
-                        <label alignment="center" text="You win!" id="3cI-T6-pYV"/>
+                        <label alignment="center" text="Tap icon to start!" id="3cI-T6-pYV"/>
                         <group width="1" alignment="left" id="BrB-Un-aEb">
                             <items>
                                 <label alignment="left" text="Score: 0" id="ljQ-VT-cf1"/>
@@ -43,6 +43,15 @@
                             </items>
                         </group>
                     </items>
+                    <menu key="menu" id="BOa-fl-HiM">
+                        <items>
+                            <menuItem title="Reset" icon="repeat" id="pYa-SF-Zvq">
+                                <connections>
+                                    <action selector="resetGame" destination="AgC-eL-Hgc" id="cvj-vv-gEM"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="oponentSymbol" destination="ZMz-Bf-DIv" id="F7g-OE-hyX"/>
                         <outlet property="resultLabel" destination="3cI-T6-pYV" id="OR0-8M-3OU"/>
@@ -82,7 +91,8 @@
                     <items>
                         <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" identifier="gameCategory" id="JfB-70-Muf"/>
+                    <color key="backgroundColor" red="0.73593355429999996" green="0.25509899409999998" blue="0.52748447779999996" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
                         <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
@@ -94,7 +104,17 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="RockPaperScissors_WatchKit_App" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="RockPaperScissors_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="VXu-6N-dag"/>
+                        <label alignment="left" text="Last Highscore:" id="acq-Vm-7mg"/>
+                    </items>
+                    <color key="backgroundColor" red="0.82167376889999999" green="0.78026322479999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="alertLabel" destination="VXu-6N-dag" id="YJ8-r5-iSW"/>
+                        <outlet property="highscoreLabel" destination="acq-Vm-7mg" id="3Wo-Hu-mRJ"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
