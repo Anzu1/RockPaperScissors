@@ -16,7 +16,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var oponentSymbol: WKInterfaceImage!
     @IBOutlet weak var resultLabel: WKInterfaceLabel!
 
-    let defaults = NSUserDefaults(suiteName: "com.kainos.anzu.RockPaperScissors")!
+    let defaults = NSUserDefaults(suiteName: "group.com.kainos.anzu.RockPaperScissors")!
     
     var score = 0
     var gamesCounter = 0
