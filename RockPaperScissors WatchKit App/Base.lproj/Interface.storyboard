@@ -35,7 +35,11 @@
                         <group width="1" alignment="left" id="BrB-Un-aEb">
                             <items>
                                 <label alignment="left" text="Score: 0" id="ljQ-VT-cf1"/>
-                                <button width="50" height="18.5" alignment="right" title="Info" id="CAP-yZ-enW"/>
+                                <button width="50" height="18.5" alignment="right" title="Info" id="CAP-yZ-enW">
+                                    <connections>
+                                        <action selector="showGameStats" destination="AgC-eL-Hgc" id="Ex2-1s-De4"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
@@ -48,13 +52,13 @@
             </objects>
             <point key="canvasLocation" x="220" y="334"/>
         </scene>
-        <!--Interface Controller-->
+        <!--GameStats-->
         <scene sceneID="BSu-dh-jEm">
             <objects>
-                <controller id="Djc-dx-TRP">
+                <controller identifier="GameStats" id="Djc-dx-TRP" customClass="GameStatController" customModule="RockPaperScissors_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Current score:" id="Z1a-kI-IGJ"/>
-                        <label alignment="right" text="0" id="6aS-Tv-rLY"/>
+                        <label width="10" alignment="right" text="0" id="6aS-Tv-rLY"/>
                         <separator alignment="left" id="NSb-Sm-zEj"/>
                         <label alignment="left" text="High score:" id="Xli-Rq-eqs"/>
                         <label alignment="right" text="0" id="diA-z4-7gb"/>
@@ -62,9 +66,14 @@
                         <label alignment="left" text="Games played:" id="Vpw-ey-8MZ"/>
                         <label alignment="right" text="0" id="DxM-2F-GRf"/>
                     </items>
+                    <connections>
+                        <outlet property="currentScoreLabel" destination="6aS-Tv-rLY" id="CDy-xW-Mx7"/>
+                        <outlet property="gamesPlayedLabel" destination="DxM-2F-GRf" id="aD9-td-Sig"/>
+                        <outlet property="highScoreLabel" destination="diA-z4-7gb" id="vg4-LM-moO"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="470" y="335"/>
+            <point key="canvasLocation" x="458" y="334"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

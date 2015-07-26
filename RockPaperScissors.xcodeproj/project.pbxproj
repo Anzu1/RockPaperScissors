@@ -20,6 +20,7 @@
 		078352381B64C15900812C6D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078352361B64C15900812C6D /* Interface.storyboard */; };
 		0783523A1B64C15900812C6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078352391B64C15900812C6D /* Images.xcassets */; };
 		0783523D1B64C15900812C6D /* RockPaperScissors WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 078352221B64C15900812C6D /* RockPaperScissors WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0783524A1B64D4E000812C6D /* GameStatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078352491B64D4E000812C6D /* GameStatController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,9 @@
 		078352351B64C15900812C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078352371B64C15900812C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		078352391B64C15900812C6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		078352451B64CF5400812C6D /* RockPaperScissors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RockPaperScissors.entitlements; sourceTree = "<group>"; };
+		078352461B64CFBA00812C6D /* RockPaperScissors WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "RockPaperScissors WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		078352491B64D4E000812C6D /* GameStatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStatController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 		078351FB1B64C13900812C6D /* RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
+				078352451B64CF5400812C6D /* RockPaperScissors.entitlements */,
 				078351FE1B64C13900812C6D /* AppDelegate.swift */,
 				078352001B64C13900812C6D /* ViewController.swift */,
 				078352021B64C13900812C6D /* Main.storyboard */,
@@ -171,7 +176,9 @@
 		078352231B64C15900812C6D /* RockPaperScissors WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				078352461B64CFBA00812C6D /* RockPaperScissors WatchKit Extension.entitlements */,
 				078352271B64C15900812C6D /* InterfaceController.swift */,
+				078352491B64D4E000812C6D /* GameStatController.swift */,
 				078352291B64C15900812C6D /* NotificationController.swift */,
 				0783522B1B64C15900812C6D /* Images.xcassets */,
 				078352241B64C15900812C6D /* Supporting Files */,
@@ -290,6 +297,12 @@
 				TargetAttributes = {
 					078351F81B64C13900812C6D = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 2B7PA75W9Z;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0783520D1B64C13900812C6D = {
 						CreatedOnToolsVersion = 6.4;
@@ -297,6 +310,12 @@
 					};
 					078352211B64C15900812C6D = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 2B7PA75W9Z;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0783522E1B64C15900812C6D = {
 						CreatedOnToolsVersion = 6.4;
@@ -385,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0783522A1B64C15900812C6D /* NotificationController.swift in Sources */,
+				0783524A1B64D4E000812C6D /* GameStatController.swift in Sources */,
 				078352281B64C15900812C6D /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,9 +544,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RockPaperScissors/RockPaperScissors.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RockPaperScissors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -534,9 +558,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RockPaperScissors/RockPaperScissors.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RockPaperScissors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -609,6 +637,9 @@
 		078352421B64C15900812C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RockPaperScissors WatchKit Extension/RockPaperScissors WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -616,6 +647,7 @@
 				INFOPLIST_FILE = "RockPaperScissors WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -623,9 +655,13 @@
 		078352431B64C15900812C6D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RockPaperScissors WatchKit Extension/RockPaperScissors WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "RockPaperScissors WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

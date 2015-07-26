@@ -16,6 +16,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var oponentSymbol: WKInterfaceImage!
     @IBOutlet weak var resultLabel: WKInterfaceLabel!
 
+    let defaults = NSUserDefaults(suiteName: "com.kainos.anzu.RockPaperScissors")!
+    
     var score = 0
     var gamesCounter = 0
     var highscore = 0
@@ -31,6 +33,12 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func chooseScissors() {
         play("scissors")
+    }
+    
+    @IBAction func showGameStats() {
+        highscore = getHighScoreFromDefaults()
+        
+        pushControllerWithName("GameStats", context: ["currentScore": "\(score)", "highscore" : "\(highscore)", "gamesPlayed": "\(gamesCounter)"])
     }
     
     func play(symbol: String) {
@@ -75,5 +83,21 @@ class InterfaceController: WKInterfaceController {
         }
         
         scoreLabel.setText("\(score)")
+        updateHighScore()
+    }
+    
+    func getHighScoreFromDefaults() -> Int {
+        var highScoreFromDefaults = defaults.objectForKey("highscore") as? Int
+        
+        return (highScoreFromDefaults != nil) ? highScoreFromDefaults! : 0
+    }
+    
+    func updateHighScore() {
+        highscore = getHighScoreFromDefaults()
+        
+        if score>highscore {
+            defaults.setObject(score, forKey: "highscore")
+            defaults.synchronize()
+        }
     }
 }
